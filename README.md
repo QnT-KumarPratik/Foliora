@@ -1,7 +1,7 @@
 # Foliora
 
-«Stories are more than words on a page.
-They are worlds waiting to be opened.»
+_Stories are more than words on a page.
+They are worlds waiting to be opened._
 
 Foliora is a lightweight, browser-based platform for writing, publishing, and reading digital stories as interactive books.
 
@@ -33,6 +33,7 @@ Just a browser, a story, and enough time to get lost in it.
 
 A story in Foliora is structured like a book:
 
+```
 Story
 │
 ├── Volume
@@ -43,6 +44,7 @@ Story
 │   └── Chapter
 │
 └── Volume
+```
 
 Each volume is treated as its own book.
 
@@ -53,7 +55,7 @@ This separation allows the same reader to display many different stories without
 ---
 
 ## 🗂️ Repository Structure
-
+```
 Foliora/
 ├── README.md
 │
@@ -66,6 +68,7 @@ Foliora/
     │
     └── user_content/
         └── ...
+```
 
 "codes/"
 
