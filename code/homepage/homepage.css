@@ -93,6 +93,7 @@ body {
     min-height: calc(100vh - 150px);
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: flex-start;
 }
@@ -125,7 +126,6 @@ h1 {
 
 .hero-links {
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
     gap: 0.85rem;
 
