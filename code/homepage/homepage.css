@@ -92,7 +92,7 @@ body {
 
     min-height: calc(100vh - 150px);
 
-    display: flex
+    display: flex;
     justify-content: center;
     align-items: flex-start;
 }
