@@ -1,0 +1,19 @@
+{
+  "ep_in_ch": "TBD",
+  "ep_order": {
+    "00": "The Awakening",
+    "01": "The First Night",
+    "02": "Hunger",
+    "03": "Assumptions",
+    "04": "Sustenance",
+    "05": "The Calculus of Survival",
+    "06": "Overexertion",
+    "07": "Canopy",
+    "08": "The Roost",
+    "09": "Five Centimetres",
+    "10": "The Shape of Things",
+    "11": "The Spark"
+  },
+  "external_references": false,
+  "internal_references": false
+}
