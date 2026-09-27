@@ -1,4 +1,4 @@
-# **Episode 2:***
+# **Episode 2:**
 
 ## *The First Night*
 
