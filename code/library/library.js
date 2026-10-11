@@ -28,3 +28,98 @@ themeToggle.addEventListener("click", () => {
 });  
   
 updateThemeButton();  
+
+
+const libraryStatus = document.getElementById("library-status");
+const storyList = document.getElementById("story-list");
+
+const catalogURL = "../../stories/index.json";
+
+const storyFolders = {
+    org: "originals",
+    ccc: "user_content"
+};
+
+async function loadLibrary() {
+    try {
+        const response = await fetch(catalogURL);
+
+        if (!response.ok) {
+            throw new Error("Could not load story catalog.");
+        }
+
+        const catalog = await response.json();
+        let storyCount = 0;
+
+        for (const category of ["org", "ccc"]) {
+            const folders = catalog[category] || [];
+            const parentFolder = storyFolders[category];
+
+            for (const folder of folders) {
+                if (!folder) continue;
+
+                const storyPath =
+                    `../../stories/${parentFolder}/${folder}`;
+
+                try {
+                    const metadataResponse = await fetch(
+                        `${storyPath}/metadata.json`
+                    );
+
+                    if (!metadataResponse.ok) {
+                        throw new Error("Metadata not found.");
+                    }
+
+                    const metadata = await metadataResponse.json();
+
+                    const card = document.createElement("article");
+                    card.style.display = "inline-flex";
+                    card.style.flexDirection = "column";
+                    card.style.verticalAlign = "top";
+                    card.style.width = "180px";
+                    card.style.margin = "12px";
+                    card.style.gap = "8px";
+
+                    const cover = document.createElement("img");
+                    cover.src = `${storyPath}/cover.svg`;
+                    cover.alt = `Cover of ${metadata.name}`;
+                    cover.style.width = "100%";
+                    cover.style.aspectRatio = "2 / 3";
+                    cover.style.objectFit = "contain";
+
+                    cover.onerror = () => {
+                        cover.onerror = null;
+                        cover.src = "404NotFound.svg";
+                    };
+
+                    const title = document.createElement("h2");
+                    title.textContent = metadata.name || folder;
+                    title.style.fontSize = "1.1rem";
+                    title.style.margin = "0";
+
+                    card.append(cover, title);
+                    storyList.appendChild(card);
+
+                    storyCount++;
+                } catch (error) {
+                    console.error(
+                        `Failed to load story: ${folder}`,
+                        error
+                    );
+                }
+            }
+        }
+
+        libraryStatus.textContent = storyCount
+            ? `${storyCount} stor${storyCount === 1 ? "y" : "ies"} in the library`
+            : "No stories could be loaded.";
+
+    } catch (error) {
+        console.error("Library loading failed:", error);
+        libraryStatus.textContent =
+            "Unable to load the library. Please try again later.";
+    }
+}
+
+loadLibrary();
+          
