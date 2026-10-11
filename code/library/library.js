@@ -31,7 +31,10 @@ updateThemeButton();
 
 
 const libraryStatus = document.getElementById("library-status");
-const storyList = document.getElementById("story-list");
+const categoryLists = {
+    org: document.getElementById("original-list"),
+    ccc: document.getElementById("creator-list")
+};
 
 const catalogURL = "../../stories/index.json";
 
@@ -98,7 +101,7 @@ async function loadLibrary() {
                     title.style.margin = "0";
 
                     card.append(cover, title);
-                    storyList.appendChild(card);
+                    categoryLists[category].appendChild(card);
 
                     storyCount++;
                 } catch (error) {
