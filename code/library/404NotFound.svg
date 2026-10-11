@@ -27,4 +27,15 @@
 
 <text x="106" y="48" fill="red" font-size="48" font-family="sans-serif"> ⚠️? </text>
 
+<text
+    id="story-name"
+    x="150"
+    y="390"
+    text-anchor="middle"
+    fill="#594775"
+    font-size="16"
+    font-family="sans-serif">
+Story Name
+</text>
+
 </svg>
