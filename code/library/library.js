@@ -96,7 +96,16 @@ async function loadLibrary() {
                     };
 
                     const title = document.createElement("h2");
-                    title.textContent = metadata.name || folder;
+                    const storyName = metadata.name || folder;
+                  
+                    const titleLink = document.createElement("a");
+                    titleLink.textContent = storyName;
+                    titleLink.href =
+    `../details/details.html?story=${encodeURIComponent(
+        `${parentFolder}/${folder}`
+    )}`;
+                    title.appendChild(titleLink);
+
                     title.style.fontSize = "1.1rem";
                     title.style.margin = "0";
 
