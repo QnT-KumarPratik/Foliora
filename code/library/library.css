@@ -163,3 +163,15 @@ footer {
     color: var(--muted-text);  
     text-align: center;  
 }  
+
+.story-category h2 a {
+    color: var(--text);
+    text-decoration: underline;
+    text-decoration-color: var(--muted-text);
+    text-underline-offset: 3px;
+}
+
+.story-category h2 a:hover {
+    color: var(--accent);
+    text-decoration-color: var(--accent);
+}
