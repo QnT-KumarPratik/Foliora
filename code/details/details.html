@@ -1,1 +1,63 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Story Details - Foliora</title>
+
+    <link rel="stylesheet" href="details.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <a href="../homepage/index.html" class="logo">Foliora</a>
+
+        <button id="theme-toggle" type="button" aria-label="Toggle theme">
+            🌙
+        </button>
+    </header>
+
+    <main>
+        <section class="details-container">
+            <p class="eyebrow">Story Details</p>
+
+            <p id="details-status">Loading story...</p>
+
+            <article id="story-details" hidden>
+                <img id="story-cover" alt="" />
+
+                <h1 id="story-name"></h1>
+
+                <p id="story-author"></p>
+
+                <p id="story-description"></p>
+
+                <details class="relations">
+                    <summary>
+                        <span>Relations</span>
+                        <span class="relations-arrow">⌃</span>
+                    </summary>
+
+                    <div id="relations-content" class="relations-content"></div>
+                </details>
+
+                <button id="read-now" type="button">
+                    Read Now
+                </button>
+            </article>
+
+            <nav class="details-links">
+                <a href="../library/library.html">← Back to Library</a>
+            </nav>
+        </section>
+    </main>
+
+    <footer>
+        <p>Foliora</p>
+    </footer>
+
+    <script src="details.js"></script>
+</body>
+</html>
