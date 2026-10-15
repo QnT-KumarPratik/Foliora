@@ -90,10 +90,38 @@ async function loadLibrary() {
                     cover.style.aspectRatio = "2 / 3";
                     cover.style.objectFit = "contain";
 
-                    cover.onerror = () => {
-                        cover.onerror = null;
-                        cover.src = "404NotFound.svg";
-                    };
+                    cover.onerror = async () => {
+                    cover.onerror = null;
+
+                    try {
+                        const response = await fetch("404NotFound.svg");
+
+                        if (!response.ok) {
+                            throw new Error("Could not load fallback cover.");
+                        }
+
+                        let svgText = await response.text();
+
+                        const safeStoryName = storyName
+                            .replace(/&/g, "&amp;")
+                            .replace(/</g, "&lt;")
+                            .replace(/>/g, "&gt;")
+                            .replace(/"/g, "&quot;")
+                            .replace(/'/g, "&apos;");
+
+                        svgText = svgText.replace(
+                            "{{STORY_NAME}}",
+                            safeStoryName
+                        );
+
+                        cover.src = URL.createObjectURL(
+                            new Blob([svgText], { type: "image/svg+xml" })
+                        );
+                    } catch (error) {
+                        console.error("Could not load fallback cover:", error);
+                        cover.hidden = true;
+                    }
+                };
 
                     const title = document.createElement("h2");
                     const storyName = metadata.name || folder;
