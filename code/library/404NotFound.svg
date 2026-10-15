@@ -35,7 +35,7 @@
     fill="#594775"
     font-size="16"
     font-family="sans-serif">
-Story Name
+{{Story Name}}
 </text>
 
 </svg>
