@@ -111,7 +111,7 @@ async function loadLibrary() {
                             .replace(/'/g, "&apos;");
 
                         svgText = svgText.replace(
-                            "{{STORY_NAME}}",
+                            "{{STORY NAME}}",
                             safeStoryName
                         );
 
