@@ -74,6 +74,7 @@ async function loadLibrary() {
                     }
 
                     const metadata = await metadataResponse.json();
+                    const storyName = metadata.name || folder;
 
                     const card = document.createElement("article");
                     card.style.display = "inline-flex";
@@ -124,7 +125,6 @@ async function loadLibrary() {
                 };
 
                     const title = document.createElement("h2");
-                    const storyName = metadata.name || folder;
                   
                     const titleLink = document.createElement("a");
                     titleLink.textContent = storyName;
