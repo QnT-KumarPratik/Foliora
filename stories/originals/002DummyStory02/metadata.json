@@ -1,10 +1,10 @@
 {
-  "name": "Story Name",
+  "name": "002DummyStory02",
   "uuid": "16CharacterStoryID",
   "contact_email": "author@example.com",
-  "author": "Author Name",
+  "author": "Me!!",
 
-  "description": "Short description of the story.",
+  "description": "Short description.... how about NO",
 
   "relations": {
     "previous": {
