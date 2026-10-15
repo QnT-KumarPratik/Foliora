@@ -115,7 +115,16 @@ async function loadLibrary() {
                             safeStoryName
                         );
 
-                        console.log(safeStoryName, svgText);
+                        const debugStatus = document.getElementById("debug-status");
+
+                        debugStatus.textContent = "Story name: " + safeStoryName + "\n" +
+                          "Placeholder remains: " +
+                          svgText.includes("{{Story Name}}") + "\n" +
+                          "Replacement successful: " +
+                          !svgText.includes("{{Story Name}}") + "\n" +
+                          "SVG contains story name: " +
+                          svgText.includes(safeStoryName);
+                      
 
                         cover.src = URL.createObjectURL(
                             new Blob([svgText], { type: "image/svg+xml" })
