@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reader - Foliora</title>
+    <link rel="stylesheet" href="reader.css">
+</head>
+<body>
+    <header class="site-header">
+        <a href="../homepage/index.html" class="logo">Foliora</a>
+        <button id="theme-toggle" type="button" aria-label="Toggle theme">🌙</button>
+    </header>
 
+    <main>
+        <section class="reader-container">
+            <nav class="reader-navigation">
+                <a id="back-to-details" href="../library/library.html">
+                    ← Back to Story Details
+                </a>
+            </nav>
+
+            <section id="reader-status" aria-live="polite">
+                Loading story...
+            </section>
+
+            <article id="reader-content" hidden>
+                <header class="chapter-header">
+                    <h1 id="reader-story-name"></h1>
+                    <p id="reader-author"></p>
+                    <h2 id="reader-chapter-title"></h2>
+                </header>
+
+                <section id="reader-episode">
+                    <p>Episode content will appear here.</p>
+                </section>
+
+                <nav class="episode-navigation">
+                    <button id="previous-episode" type="button" disabled>
+                        ← Previous
+                    </button>
+
+                    <span id="episode-position">Episode 1</span>
+
+                    <button id="next-episode" type="button" disabled>
+                        Next →
+                    </button>
+                </nav>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>Foliora</p>
+    </footer>
+
+    <script src="reader.js"></script>
+</body>
+</html>
