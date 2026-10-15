@@ -115,6 +115,8 @@ async function loadLibrary() {
                             safeStoryName
                         );
 
+                        console.log(safeStoryName, svgText);
+
                         cover.src = URL.createObjectURL(
                             new Blob([svgText], { type: "image/svg+xml" })
                         );
