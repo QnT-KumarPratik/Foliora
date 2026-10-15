@@ -110,22 +110,10 @@ async function loadLibrary() {
                             .replace(/"/g, "&quot;")
                             .replace(/'/g, "&apos;");
 
-
-                        const debugStatus = document.getElementById("debug-status");
-
                         const placeholder = "{{Story Name}}";
-
-                        debugStatus.textContent =
-    "Story name: " + safeStoryName + "\n" +
-    "Placeholder found: " + svgText.includes(placeholder) + "\n";
 
                         svgText = svgText.replace(placeholder, safeStoryName);
 
-                        debugStatus.textContent +=
-    "Placeholder after replacement: " +
-    svgText.includes(placeholder) + "\n" +
-    "Replacement text present: " +
-    svgText.includes(safeStoryName) + "\n";
                         cover.src = URL.createObjectURL(
                             new Blob([svgText], { type: "image/svg+xml" })
                         );
